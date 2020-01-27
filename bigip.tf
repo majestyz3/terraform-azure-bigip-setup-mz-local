@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Create F5 BIGIP VMs test
+=======
+# Create F5 BIGIP VMs 
+>>>>>>> c7a6eb8bfa6995c17b3d59986433f9910ee25cbd
 resource "azurerm_virtual_machine" "f5bigip" {
     count                        = length(var.azs)
     name                         = format("%s-bigip-%s-%s",var.prefix,count.index,random_id.randomId.hex)
@@ -137,7 +141,7 @@ resource "azurerm_network_interface" "mgmt-nic" {
 
 # Create Application Traffic Network Security Group and rule
 resource "azurerm_network_security_group" "application_sg" {
-    name                = format("%s-app_sg-%s",var.prefix,random_id.randomId.hex)
+    name                = format("%s-application_sg-%s",var.prefix,random_id.randomId.hex)
     location            = azurerm_resource_group.main.location
     resource_group_name = azurerm_resource_group.main.name
 
